@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS IO관련</title>
+    <script>
+        // window.alert("얼럿메시지 1");
+        document.write("독라이트1");
+        console.log("콘솔에 처음 뿌려보는 디버그 메시지 1");
+    </script>
+</head>
+<body>
+    <p id = "p1">기본p태그</p>
+    <script>
+
+        // window.alert("얼럿메시지 2");
+        console.log("콘솔에 처음 뿌려보는 디버그 메시지 2"); // 디버깅 용으로 많이 쓰임
+        document.write("독라이트2"); //거의 안씀
+        document.getElementById("p1").innerHTML = "바뀐p태그";
+        var confirmResult = window.confirm("정말 삭제하시겠습니까?"); // 확인 : true, 취소 : false
+        console.log(confirmResult);
+        var promptResult = window.prompt("바꾸고 싶은 문구를 작성해주세요."); // 확인 : 입력한 값, 취소 : null (no false "")
+        console.log(promptResult);
+    </script>
+</body>
+</html>
