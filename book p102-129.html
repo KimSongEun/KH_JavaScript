@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 문자열
+        console.log("hello".length);
+        console.log('hello'.length);
+        console.log("hello world".charAt(0)); // 특정 인덱스 위치의 문자를 반환
+        console.log("hello world".replace("hello", "hi")); // 기존 문자열을 다른 문자열로 치환 
+        console.log("hello world".toUpperCase()); // 문자열을 대문자로 변환 
+        console.log("1,2,3,4,5".split(",")); // ","를 토큰으로 문자열을 나누어 문자열 배열을 반환
+
+        // 숫자
+        console.log(parseInt("010", 10)); // 두번째 인자로 진법을 지정한다
+        console.log(parseInt("010", 2)); // 이진수로 지정 
+        console.log(parseInt("0110", 2)); // 이진수로 지정 
+        console.log(parseInt("010")); // 숫자 앞에 0이 있으면 8진수로 인식 
+        console.log(parseInt("10"));
+        console.log(parseInt("0x10")); // 숫자 앞에 0x가 있으면 16진수로 인식 
+        console.log(parseFloat("010")); // 진법을 지정하지 않아도 10진수로 반환
+        console.log(parseFloat("03.1415")); // 진법을 지정하지 않아도 10진수로 반환 및 소수점 유지
+
+        var a = 0 / 0;
+        var b = "food" * 1000; 
+        var b1="23"*1000;
+        var b2="23"+1000;
+        var b3="23"-1000;
+        var b4="23"/1000;
+        var c = Math.sqrt(-9);//음수의 제곱근은 허수이다. 자바스크립트에선 허수표현불가!! 
+        console.log("a => " + a);
+        console.log("typeof a => " + typeof a);
+        console.log("b => " + b);
+        console.log(typeof b);
+        console.log("b1 => " + b1);
+        console.log("b2 => " + b2);
+        console.log("b3 => " + b3);
+        console.log("b4 => " + b4);
+        console.log("c => " + c);
+        var d = 10 / 0;// Infinity 
+        console.log(d);
+        console.log(typeof d);
+        var e = d - d;// Infinity-Infinity 
+        console.log("e => " + e); // e => NaN 
+        console.log("typeof e => " + typeof e); // typeof a => number
+
+        var x = parseInt("hello", 10);
+        if (isNaN(x)) {
+            document.write("변수 x는 NaN입니다.<br>");
+        }
+        var y = 9876;
+        if (isNaN(y)) {
+            document.write("변수 y는 NaN아닙니다.");
+        }
+        else {
+            document.write("변수 y는 NaN이 입니다.");
+        }
+        //빈문자열은 NaN이 아니다. 
+        var k = ""; //빈문자열 
+        var l = ' '; //공백만 있는 문자열
+        console.log(isNaN(k));
+        console.log(isNaN(l));
+        console.log(typeof l); // String
+
+        console.log(1 / 0);
+        console.log(-1 / 0);
+        console.log(isFinite(1 / 0));
+        console.log(isFinite(1));
+
+        // 널(null)과 undefined
+        var test = null;
+        console.log("typeof test => " + typeof test); // typeof test => object 
+        console.log("test => " + test); // null
+
+        if (test){
+            console.log("test 참");
+        } else {
+            console.log("test 거짓");
+        }
+
+        //정의되지 않았거나, 값이 할당되지 않은경우 
+        var val1;
+        console.log("val1 => " + typeof val1);
+        console.log("val2(정의된적없음) => " + typeof val2);
+
+        if (val1){
+            console.log("va11 참");
+        } else {
+            console.log("va11 거짓");
+        }
+
+        var val2 = 0;
+        console.log("val2 typeof => " + typeof val2)
+        if (val2){
+            console.log("val2 참");
+        } else {
+            console.log("val2 거짓");
+        }
+
+        var val3 = " ";
+        console.log (val3);
+        console.log("val3 typeof => " + typeof val3)
+        if (val3){
+            console.log(" val3 참");
+        } else {
+            console.log("val3 거짓");
+        }
+
+        var val4 = '';
+        console.log("var4 typeof => " + typeof val4)
+        if (val4){
+            console.log("val4 참");
+        } else {
+            console.log("val4 거짓");
+        }
+
+        // '참' : 10/0; Infinity
+        // '거짓' : "food"*1000; NaN, ''빈문자열, undefined, null, 0
+
+        var val5 = []; // object로 값만 안들어있는 상태
+        console.log("val5 => " + val5); // null이 아님
+        console.log("var5 typeof => " + typeof val5)
+        if (val5){
+            console.log("val5 참");
+        } else {
+            console.log("val5 거짓");
+        }
+
+        // Boolean
+        console.log(123 < 1000);
+        //undefinde, null, 0, "", NaN 
+        var test_undefined;
+        if (test_undefined) {
+            //test_undefined 는 undefined의 값을 가지고, 조건식에서 false로 처리된다
+        }
+        var element = document.getElementById("notExist");
+        if (element) {
+            //element는 null값을 가지고, 조건식에서 false로 처리된다. 
+        }
+        if (0) {
+            //0은 조건식에서 false로 처리된다. 
+        }
+        if ("") {
+            //"" 빈 문자열은 조건식에서 false로 처리된다. 
+        }
+        if (NaN) {
+            //NaN은 조건식에서 false로 처리된다. 
+        }
+
+        // 배열
+        //배열선언1 : 생성자 호출 
+        var arr1 = new Array(3); // 3숫자 없어도 된다. 
+        // var arr1=new Array(); // 가능
+        arr1[0] = "a";
+        arr1[1] = "b";
+        arr1[2] = "c";
+        console.log("arr1 = ", arr1);
+        //배열선언2 : 생성자를 이용한 초기화 
+        var arr2 = new Array("l", "m", "n");
+        arr2[4] = "c";
+        console.log("arr2 = ", arr2);
+        //배열선언3 : 리터럴로 바로 초기화 
+        var arr3 = ["x", "y", "z"]; // 그냥 [] 이렇게 선언해줘도 된다. 
+        // var arr3 = []; // 가능
+        arr3[4] = "c";
+        console.log("arr3 = ", arr3);
+
+        var arrTest = [];
+        arrTest[0] = "k";
+        arrTest.push("h");
+        console.log("arrTest= [" + arrTest + "]");
+
+        // Object
+        var el = document.getElementById("notExist"); //존재하지 않는 엘리먼트이면 null 반환 
+        var regExp = /^[0-9]*$/;
+        var date = new Date();
+        var f = function () {
+            alert("hello, js~");
+        };
+        console.log("el => " + typeof el);
+        console.log("regExp => " + typeof regExp);
+        console.log("date => " + typeof date);
+        console.log("f => " + typeof f);
+
+        var obj = {
+            attr1: "hello",
+            attr2: "javascript"
+        };
+        var obj_ = new Object();
+        obj_.attr1 = "I’m a object.";
+        console.log(obj);
+        console.log(obj_);
+        console.log(obj.attr1);
+        console.log(obj.attr2);
+        console.log(obj_.attr1);
+
+        // 수업 - 오브젝트 생성방법 2가지
+        var obj1 = {
+            // a1 : "v1",
+            // a2 : "v2"
+         }; 
+        var obj2 = new Object();
+
+        // 값 넣기
+        obj1.a1 = "v1";
+        obj1.a2 = "v2";
+        obj1.a3 = 1111;
+        obj1.f1 = function() { console.log ("obj1의 메소드 f1()입니다.")};
+        console.log(obj1);
+        obj1.a3 = "23"; // a3가 없었으면 새로 만들어서 대입, 있으면 대체
+        
+        // 값 확인
+        console.log(obj1);
+        // 하나의 값만 확인
+        console.log(obj1["a1"]);
+        // console.log(obj1[a1]); // 이건 안됨.
+        a1 = "a1";
+        console.log(a1);
+        console.log(obj1[a1]);
+
+        console.log(obj1.a3);
+        console.log(obj1.f1);
+
+        // 변수
+        // alert("Hello JavaScript");
+        // var txt = "안녕하세요.\n반갑습니다."; 
+        // alert(txt);
+        // var a = 2;
+        // a = 'aaa';
+        var a = 2;
+        // let a = 2;
+        var a = 'aa'; // let으로 선언한 변수는 또 선언할 수 없음, window와 this에는 작성x
+        console.log(a);
+        console.log(window.a);
+        console.log(this.a);
+
+        b=3;
+        console.log(b);
+        console.log(window.b);
+        console.log(this.b);
+
+        // 주석
+        // 주석 처리된 구문
+        /* 주석처리된
+           여러줄 구문 */
+
+        // 형변환
+        // 암(묵)시적 형변환
+        var order1 = 1 + 2 + "피자";
+        var order2 = (1 + 2) + "피자";
+        var order3 = 1 + (2 + "피자");
+
+        var test1 = Infinity - 1;
+        var test2 = "54" + 46;
+        var test3 = 2 + "1 1";
+        var test4 = 99 + 101;
+        var test5 = "100" - "100";
+        var test6 = "hello, " + 10 / 2;
+        var test7 = "바나나: " + 3 + 3 + "개, 사과: " + 7 + "개";
+
+        var div = document.createElement("div");
+        div.id = "cont";
+        var result = order1 + "<br>" +
+            order2 + "<br>" +
+            order3 + "<br><br>" +
+            test1 + "<br>" +
+            test2 + "<br>" +
+            test3 + "<br>" +
+            test4 + "<br>" +
+            test5 + "<br>" +
+            test6 + "<br>" +
+            test7 + "<br>";
+        div.innerHTML = result;
+        document.body.appendChild(div);
+
+        // 명시적 형변환
+
+        // 제어문
+        // if 조건문
+        var value1 = 100, value2 = 200;
+        if (value1 > value2) { // 100 > 200 이 참일 때 실행 
+            alert('100 > 200 -> true');
+        }
+        // alert('작업완료');
+
+        // if ~ else 조건문
+        var num1 = 100;
+        var num2 = 200;
+        if (num1 == num2) { // num1 == num2 이 참일 때 실행 
+            // alert('num1과 num2가 같다\nnum1=' + num1 +', num2=' + num2); 
+        } else { // num1 == num2 이 거짓일 때 실행 
+            // alert('num1과 num2가 같지 않다\nnum1=' + num1 +', num2=' + num2); 
+        }
+        // alert('작업완료'); 
+
+        // if ~ else if 조건문
+        var num = 200;
+        if (num == 100) {
+            // num == 100 이 참일 때 실행 
+            // alert('num과 100과 같다'); 
+        } else if (num == 200) {
+            // num == 200 이 참일 때 실행 
+            // alert('num과 200과 같다'); 
+        } else if (num == 300) {
+            // num == 300 이 참일 때 실행 
+            // alert('num과 300과 같다'); 
+        } else {
+            // num이 100, 200, 300 모두 아닐 때 실행 
+            // alert('num은 100, 200, 300과 같지 않다'); 
+        }
+        // alert('작업완료');
+
+        // 중첩 if 조건문
+        var num = 29;
+        if (num >= 1 && num <= 100) {
+            if (num % 2 == 0) {
+                // alert("num은 짝수");
+            } else {
+                // alert("num은 홀수");
+            }
+        } else {
+            // alert("num은 1-100 사이의 숫자가 아닙니다");
+        }
+
+        // switch 문
+        var num = 7;
+        switch (num % 2) {
+            // case 0: alert('짝수'); break;
+            // case 1: alert('홀수'); break;
+        }
+
+        // 삼항 연산자
+        // alert(true ? '참입니다' : '거짓입니다');
+        var num = 11;
+        // alert(num == 123 ? 'num은 123과 같다' : 'num은 123과 같지 않다');
+        // alert(num < 100 ? 'num은 100보다 작다' : 'num은 100보다 작지 않다');
+
+        // 반복문
+            // for 반복문
+            // 1
+            for (var i = 0; i < 5; i++) {
+                // alert(i + '번째 반복');
+                    }
+            
+            // 2
+            var arr = ['Apple', 'Banana', 'Cherry'];
+            for (var i = 0; i < arr.length; i++) {
+                // alert(arr[i]);
+            }
+
+            // for in 반복문
+            // 1
+            var arr = ['Apple', 'Banana', 'Cherry'];
+            for (var i in arr) {
+                // alert(arr[i]);
+            }
+
+            // 2
+            var obj = { "Korea":"Seoul", 
+                        "US":"Washington D.C", 
+                        "China":"Beijing", 
+                        "France":"Paris" } 
+            for (var key in obj) { 
+                document.write(key, " : ", obj[key], "<br>"); 
+            }
+
+            // 3
+            var arr = ['apple','banana','kiwi']; 
+            arr.forEach( function(element) { 
+                document.write(element+"<br>") 
+            }); 
+
+            // while
+            var i = 0; // 초기식 
+            while(i<5) { // while 조건식 
+                // alert(i); 
+                i++; // 증감식 
+            }
+
+            // do~while
+            var i = 0; // 초기식 
+            do { // 무조건 실행 
+                //i++; // 1, 2, 3, 4, 5
+                // alert(i); 
+                i++; // 증감식 // 0, 1, 2, 3, 4 
+            } while(i<5); // while 조건식
+
+            // 중첩 반복문
+            var output = ''; 
+            for(var i=0; i<5; i++) { 
+                for(var j=0; j<=i; j++) { 
+                    output += '*'; 
+                } 
+                output += '\n'; 
+            } 
+            // alert(output);
+
+            // break문
+            // 1
+            var i = 0;
+            while (true) {
+                // alert(i + '번째 반복 수행');
+                if (i == 10) { // i가 10과 같다면 while 반복문 중단 
+                    break;
+                }
+                i++;
+            }
+
+            // 2
+            // for (var i = 0; true; i++) { // 조건식이 true로 무한 반복 
+            //     alert(i + '번째 반복');
+            //     if (!confirm('계속 수행하시겠습니까?')) { // 반복을 진행할지 확인 
+            //         break;
+            //     }
+            // }
+            // alert('작업 종료');
+
+            // continue 문 
+            // for (var i = 0; i < 10; i++) {
+            //     continue;
+            //     alert(i); // 수행되지 않음 
+            // }
+            // alert('작업 완료');
+
+    </script>
+</head>
+
+<body>
+
+    <script>
+    // 수업-변수
+    var a = 2;
+    a = 'aaa';
+    console.log(a);
+    console.log(window.a);
+    console.log(this.a);
+
+    b = 3;
+    console.log(b);
+    console.log(window.b);
+    console.log(this.b);
+    </script>
+
+    <span id="exist"></span>
+    <script>
+        //유사 참 
+        if ([]) {
+            //빈 객체 object는 참이다. 
+        }
+        element = document.getElementById("exist");
+        if (element) {
+            element.innerHTML = "존재하는 엘레먼트는 참이므로 이것이 실행된 것이다..."
+        }
+        if (1) {
+            //0이 아닌 모든 숫자는 참이다. 
+        }
+        var str = "빈 객체열 아님";
+        if (str) {
+            //str은 참이다. 
+        }
+    </script>
+    <p id = "p1">aaaaaaaaa</p>
+    <script>
+        var val6 = document.getElementById("p1");
+        console.log("var6 typeof => " + typeof val6);
+        console.log("val6 => " + val6);
+        if (val6){
+            console.log("val6 참");
+        } else {
+            console.log("val6 거짓");
+        }
+        var val7 = document.getElementById("p3");
+        console.log("val7 => " + val7);
+        console.log("var7 typeof => " + typeof val7);
+        if (val7){
+            console.log("val7 참");
+        } else {
+            console.log("val7 거짓");
+        }
+    </script>
+</body>
+
+</html>

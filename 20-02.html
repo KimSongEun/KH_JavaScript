@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 교재
+        var str1 = "abcdef";
+        var str2 = 'abecef';
+        var num = 1234;
+        var bool = true;
+        var obj = { "abcdef": 123 };
+        var arr = [1, 2, 3, 4];
+        var val;
+        var el = document.getElementById("notExist"); //존재하지 않는 엘레먼트 
+        var regExp = /^[0-9]*$/; // 숫자를 검사하는 정규표현식
+        var date = new Date(); //오늘날짜를 담은 날짜객체 생성. 
+        var f = function () {
+            alert("hello, js~")
+        }
+        console.log("str1 => " + typeof str1);
+        console.log("str2 => " + typeof str2);
+        console.log("num => " + typeof num);
+        console.log("bool => " + typeof bool);
+        console.log("obj => " + typeof obj);
+        console.log("arr => " + typeof arr);
+        console.log("val => " + typeof val);
+        console.log("el => " + typeof el);
+        console.log("regExp => " + typeof regExp);
+        console.log("date => " + typeof date);
+        console.log("f => " + typeof f);
+
+        // 수업
+        var str11;
+        console.log(typeof str11);
+        str11 = 1;
+        console.log(typeof str11);
+        str11= {"abcdef":123, "aaa":222};
+        console.log(typeof str11);
+        console.log(str11);
+        str11 = [1, 2, 3, 4];
+        console.log(typeof str11);
+        console.log(str11);
+        console.log(str11[2]);
+        str11[5] = 100;
+        console.log(str11);
+
+        // 위치 중요 : str11 값 출력 불가능
+        str11 = document.getElementById("p1");
+        console.log(typeof str11);
+        console.log(str11);
+
+    </script>
+</head>
+
+<body>
+    <!-- 위치 중요 : str11 값 출력 불가능 -->
+    <script>
+        str11 = document.getElementById("p1");
+        console.log(typeof str11);
+        console.log(str11);
+        </script>
+    <p id = "p1">aaaaaaaaa</p>
+    <!-- 위치 중요 : str11 값 출력 가능 -->
+    <script>
+    str11 = document.getElementById("p1");
+    console.log(typeof str11);
+    console.log(str11);
+    </script>
+    <script>
+        var str1;
+        console.log(typeof str1);
+        str1 = 'aaaaa';
+        console.log(typeof str1);
+        console.log(str1.length);
+    </script>
+</body>
+
+</html>
