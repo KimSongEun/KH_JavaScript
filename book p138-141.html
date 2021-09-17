@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var hong = {
+            name: "홍길동",
+            age: 567,
+            gender: "M",
+            nationality: "조선",
+            speak: function () {
+                alert("나는 [" + this.nationality + "]말하는 [" + this.name + "]입니다.");
+            }
+        }
+        hong.speak();
+    </script>
+    <!-- <script>
+        var steve = new Person("스티브잡스", 62, "M", "미국");
+        steve.speak();
+        function Person(name, age, gender, nationality) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.nationality = nationality;
+            this.speak = function () {
+                alert("나는 [" + this.nationality + "]말하는 [" + this.name + "]입니다.");
+            }
+        }
+    </script> -->
+    <!-- <script>
+
+        var steve = new Person("스티브잡스", 62, "M", "미국");
+        steve.speak();
+        function Person(name, age, gender, nationality) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.nationality = nationality;
+            this.speak = function () {
+                alert("나는 [" + this.nationality + "]말하는 [" + this.name + "]입니다.");
+            }
+        }
+
+        //Developer생성자함수 선언 
+        function Developer(name, age, gender, nationality, job, exp) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.nationality = nationality;
+            this.job = job;
+            this.exp = exp;
+            this.work = function () {
+                return job + "에서 " + exp + "년동안 일하고 있습니다.";
+            }
+        }
+        //Person을 prototype으로 상속한다. 
+        Developer.prototype = new Person();
+        var bill = new Developer("빌게이츠", 62, "M", "미국", "MS", 300);
+        bill.speak();
+        alert(bill.work());
+    </script> -->
+    <!-- <script>
+        function Developer(name, age, gender, nationality, job, exp) {
+            //부모객체 생성자호출 
+            Person.call(this, name, age, gender, nationality);
+            this.job = job;
+            this.exp = exp;
+            this.work = function () {
+                return job + "에서 " + exp + "년동안 일하고 있습니다.";
+            }
+        }
+    </script> -->
+</head>
+
+<body>
+
+</body>
+
+</html>

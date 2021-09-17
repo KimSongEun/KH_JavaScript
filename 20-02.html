@@ -57,6 +57,18 @@
 </head>
 
 <body>
+    <script>
+        var gv_date = "11/01";
+        var gv_str = "저는 전역변수 입니다.";
+        var gv_name = "한석봉";
+        helloJS(gv_name);
+        function helloJS(name) {
+            var weather = "좋네요";
+            alert("안녕하세요, " + name + ". " + gv_date + " 오늘 날씨가 " + weather);
+        }
+        console.log(gv_name);
+        console.log(weather);
+    </script>
     <!-- 위치 중요 : str11 값 출력 불가능 -->
     <script>
         str11 = document.getElementById("p1");

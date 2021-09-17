@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 이벤트 함수</title>
+    <!-- <script>
+        window.onload = function () {
+            var btn = document.querySelector("button");
+            var btnClickHandler = function (e) {
+                var target = e.target;
+                alert(target.id + "버튼을 클릭하셨습니다.");
+            }
+            btn.onclick = btnClickHandler;
+        };
+    </script> -->
+</head>
+
+<body>
+    <!-- <button id="myButton" onclick = "btnClickHandler(event);">버튼</button> -->
+    <button id="myButton">버튼</button>
+    <script>
+        // var btn = document.querySelector("button");
+        var btn = document.querySelector("#myButton");
+        var btnClickHandler = function (e) {
+            var target = e.target;
+            console.log(target.id + "버튼을 클릭하셨습니다.");
+            console.log(e.target);
+            console.log(btn);
+            console.log(e);
+
+            // 이벤트객체 조회
+            for (var key in e) {
+                console.log("key: " + key + ", value: " + e[key]);
+                if(key == "path") {
+                    console.log(e[key]);
+
+                    //object 모양일 때 쓰는 코드
+                    // for(var k1 in e[key]){
+                    //     console.log("     [path] key: "+ k1 + ", value: " + key[k1]);
+                    // }
+
+                    // array
+                    for(var i; i<e[key].length;i++){
+                        console.log("     [path] value: " + e[key][i]);
+                    }
+                }
+            }
+        }
+        // btn.onclick = btnClickHandler;
+        btn.addEventListener("click", btnClickHandler);
+    </script>
+</body>
+
+</html>

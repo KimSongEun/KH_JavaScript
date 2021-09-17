@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        var gv_date = "11/01";
+        var gv_str = "저는 전역변수 입니다.";
+        var gv_name = "한석봉";
+        helloJS(gv_name);
+        function helloJS(name) {
+            weather = "좋네요"; // var로 선언하면 window 객체에 저장되지않고 지역변수라 아래 console에서 오류
+            alert("안녕하세요, " + name + ". " + gv_date + " 오늘 날씨가 " + weather);
+        }
+        console.log(gv_name);
+        console.log(weather);
+    </script> -->
+
+
+    <!-- <script> 
+        function hello() { 
+            alert("Hello JavaScript"); 
+        } 
+        var func = hello; 
+        func(); 
+    </script>  -->
+
+    <!-- <script>
+        function hello1() {
+            alert("Hello JavaScript");
+        }
+        function hello2() {
+            alert("안녕하세요");
+        }
+        function exam(func) {
+            func();
+        }
+        exam(hello1);
+        exam(hello2);
+    </script> -->
+
+    <script>
+        function makeHello() {
+            function hello(name) {
+                document.write("안녕하세요, " + name);
+            }
+            return hello;
+        }
+        var result = makeHello();
+        result("홍길동");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
