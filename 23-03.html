@@ -5,7 +5,99 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JS 객체</title>
+    <script>
+        // 함수 정의는 순서 즉, 위치에 상관없이 인식됨.
+        // 위치가 아래 정의 되어있어도 위 부분에서 호출이 가능함.
+        console.log("f1호출 함!!");
+        f1();
+        function f1() {
+            console.log("f1호출 됨됨됨");
+        }
+
+        console.log("f3호출 함!!");
+        // 예외
+        // 함수 정의가 body 안에 있으면 호출되지 않음. load 되기 전까지 인식되지 않으므로 
+        // 오류 f3();
+        // head 안이라도 script 태그 분리되어있고 아래 부분에 위치한다면 인식되지 않음.
+        // 오류 f3();
+
+        // 변수선언은 순서 즉, 위치에 영향을 받음.
+        console.log(a1);
+        var a1 = 50;
+
+        console.log("f2호출 함!!");
+        var f2 = function () {
+            console.log("f2호출 됨됨됨");
+        }
+        f2();  // 순서 중요. f2 선언이 위에 있어야 함.
+    </script>
+    <script>
+        function f3() {
+            console.log("f3호출 됨됨됨");
+        }
+    </script>
+
+    <script>
+        var arr = ['apple', 'banana', 'kiwi'];
+        //arr.forEach(function(e){console.log(e)});
+        arr.forEach(f3);
+        function f3(e) { console.log(e) }
+
+        var f4 = function (e) { console.log(e) }
+        arr.forEach(f4);   // f4 가 호출되기 이전에 선언되어있어야 함.
+    </script>
+
+    <script>
+        var arr = ['apple', 'banana', 'kiwi'];
+        // arr.forEach(function(e){console.log(e)});
+        arr.forEach(f3);
+        function f3(e) { console.log(e) }
+
+        var f4 = function (e) { console.log(e) }
+        arr.forEach(f4); //f4가 호출되기 이전에 선언되어있어야 함.
+    </script>
+
+
+</head>
+
+<body>
+    <button onclick="f4('아무거나 뿌려 봄');">인라인 스크립트에서는 () 붙여서 바로 호출한다.</button>
+    <script>
+        function frmAction() {
+            var v1 = document.getElementById("id1").value;
+            var v2 = document.getElementById("id1");
+            console.log("v2:" + v2);
+            console.log("v1:" + v1);
+            console.log(v1.length);
+            if (v1.length >= 3) {
+                return true;
+            } else {
+                alert("3자 이상 입력하시오.");
+                // document.getElementById("id1").value = "";
+                // 안바뀜 v1 = ""; // 안된다. 
+                v2.value = "";
+                v2.focus();
+                return false;
+            }
+        }
+    </script>
+    <form action="#" method="get">
+        <input type="text" name="a1" id="id1">
+        <!-- a1에 입력된 값이 3자 이상이면 action을 이동 즉, submit 기능함.
+             아니라면 alert창으로 경고 메시지 뿌리고 a1 다시 입력하도록 함. -->
+        <input type="submit" onclick="console.log('확인용'); return frmAction();">
+        <input type="reset">
+    </form>
+
+
+
+    <!-- <script>
+        function f3(){
+            console.log("f3호출 됨됨됨");
+        }
+    </script> -->
+
     <!-- <script>
         var hong = {
             name: "홍길동",
@@ -83,13 +175,8 @@
         var asdf = new Developer("asdf", 62, "M", "영국", "MS", 300);
         asdf.speak();
         console.log(asdf.work());
-        
+
     </script>
-
-</head>
-
-<body>
-
 </body>
 
 </html>
