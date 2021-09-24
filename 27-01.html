@@ -22,14 +22,18 @@
             n2.height = 100;
             document.body.appendChild(n2);
             
-            n3 += '<ul>'; 
-            n3 += '<li>JavaScript</li>'; 
-            n3 += '<li id = "id2">DOM</li>'; 
-            n3 += '<li>jQuery</li>'; 
-            n3 += '</ul>';
+            n3 += "<ul>"; 
+            n3 += "<li style='color:red;'>JavaScript</li>"; 
+            n3 += "<li id = 'id2' style = 'color:blue;'>DOM</li>"; 
+            n3 += "<li>jQuery</li>"; 
+            n3 += "</ul>";
             // document.body.appendchild(n3); // element로 생성된 것이 아니므로 appendChild 불가
             // document.body.innerHTML = n3; // 아래로 이동
             document.getElementById("forInner").innerHTML = n3;
+            // document.getElementById("forInner").innerText = n3;
+            // document.getElementById("id1").innerText = "abc"; // 열고 닫히는 태그가 없어서 안됨.
+            // document.getElementById("id1").innerHTML = "abc"; // 열고 닫히는 태그가 없어서 안됨.
+            document.getElementById("id1").value = "abc"; // input태그에는 value를 써주어야한다. 
 
             var title_1 = document.getElementById('title_1'); 
             var title_2 = document.getElementById('title_2'); 
@@ -59,5 +63,7 @@
     <h1 id="title_2">JavaScript</h1>    
     <p id = "forInner">기존 p태그 inner</p>
     <h2 id = "t2">t2내용</h2>
+    <input type = "text" name = "aaa" id = "id1">
+
 </body>
 </html>
