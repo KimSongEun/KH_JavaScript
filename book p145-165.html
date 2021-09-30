@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!-- 교재 p145 -->
+    <!-- <script>
+        function hello() {
+            alert("Hello");
+        }
+        setInterval(hello, 5000);
+    </script> -->
+
+    <!-- <script>
+        setInterval(function () {
+            alert("Hello");
+        }, 1000);
+    </script> -->
+
+    <!-- 교재 p146 -->
+    <!-- <script> 
+        setTimeout(function() { 
+         alert("Hello"); 
+        }, 1000); 
+    </script> -->
+
+    <!-- 교재 p148 -->
+    <!-- <script> 
+        setInterval(function() { 
+        alert(parseInt(Math.random() * 50) + 50); 
+        }, 1000); 
+    </script> -->
+
+    <!-- <script>
+        var count = 0;
+        var tID = setInterval(function () {
+            count++;
+            alert(count);
+            if (count == 5) {
+                clearInterval(tID);
+            }
+        }, 1000);
+    </script> -->
+
+    <!-- 교재 p148~155 notyet -->
+    <!-- 교재 p149 -->
+    <script>
+        var num = 345.678;
+        num = Math.ceil(num * 100) / 100;
+        console.log(num);//345.68 
+    </script>
+
+    <!-- 교재 p150 -->
+    <script>
+        var num = 345.678;
+        num = Math.round(num * 100) / 100;
+        console.log(num);//345.67 
+    </script>
+
+    <!-- 교재 p151 -->
+    <script>
+        document.write("Hello".length); // 5 
+    </script>
+
+    <!-- 교재 p153 -->
+    <script>
+        var str = 'khacademy_KHACADEMY';
+        var newstr = str.replace(/academy/gi, '정보교육원');
+        console.log(newstr);
+    </script>
+
+    <!-- 교재 p154 -->
+    <script>
+        function splitStrig(str, separator) {
+            var strArr = str.split(separator);
+            return strArr;
+        }
+
+        var str1 = "kh_케이에이치_KH";
+        var str2 = "2016,2017,2018,2019";
+        var str3 = "안녕, 나 자바스크립트야!"
+        strArr1 = splitStrig(str1, "_");
+        strArr2 = splitStrig(str2, ",");
+        strArr3 = splitStrig(str3, "");
+        console.log("[" + strArr1 + "]");
+        console.log("[" + strArr2 + "]");
+        console.log("[" + strArr3 + "]");
+    </script>
+
+    <!-- 교재 p155 -->
+    <script>
+        var namestr = "홍길동신사임당유관순";
+        var name1 = namestr.substring(0, 3);
+        var name2 = namestr.substring(3, 7);
+        var name3 = namestr.substring(7);
+        console.log(name1);
+        console.log(name2);
+        console.log(name3);
+    </script>
+
+    <script>
+        var strtrim = " white Space "
+        var newstr = strtrim.trim();
+        console.log(newstr);
+    </script>
+    
+    <!-- 교재 p159 -->
+    <script>
+        var func = function () {
+            var d = new Date();
+            // 일자만 표기 console.log(d.getDate());
+            // console.log(d.getHours());
+            // console.log(d.getMinutes());
+            // console.log(d.getSeconds());
+
+            var year = d.getFullYear();
+            var month = d.getMonth() + 1;
+            var date = d.getDate();
+            var day = d.getDay();
+            var hour = d.getHours();
+            var min = d.getMinutes();
+            var sec = d.getSeconds();
+            var milisec = d.getMilliseconds();
+            month = (month > 9 ? "" : "0") + month;
+            date = (date > 9 ? "" : "0") + date;
+            hour = (hour > 9 ? "" : "0") + hour;
+            min = (min > 9 ? "" : "0") + min;
+            sec = (sec > 9 ? "" : "0") + sec;
+            var datestr;
+            switch (day) {
+                case 0: datestr = "일"; break;
+                case 1: datestr = "월"; break;
+                case 2: datestr = "화"; break;
+                case 3: datestr = "수"; break;
+                case 4: datestr = "목"; break;
+                case 5: datestr = "금"; break;
+                case 6: datestr = "토"; break;
+            }
+            return year + "-" + month + "-" + date + " (" + datestr + ") " + hour + ":" + min + ":" + sec + ":" + milisec;
+        }
+        setInterval(function () {
+            // document.body.innerHTML = func();
+        }, 10);
+    </script>
+
+    <!-- 교재 p161 - 1 -->
+    <script>
+        var coms = ["com1", "com2", "com3"];
+        // alert(coms.length); // 3
+    </script>
+
+    <!-- 교재 p161 - 2 -->
+    <script>
+        var coms = ["com1", "com2", "com3"];
+        for (var i = 0; i < coms.length; i++) {
+            console.log(coms[i]);
+        }
+    </script>
+
+    <!-- 교재 p161 - 3 -->
+    <script>
+        var coms = ["com1", "com2", "com3"];
+        // alert(coms.join(","));
+    </script>
+
+    <!-- 교재 p162 - 1 -->
+    <script>
+        var coms = "com1,com2,com3";
+        var arr = coms.split(",");
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+    </script>
+
+    <!-- 교재 p162 - 2 -->
+    <script>
+        var obj = {
+            x: "x 속성값",
+            "y": "y(문자열) 속성값",
+            z: function () {
+                return "저는 속성에 지정된 함수입니다."
+            }
+        }
+        console.log(obj);
+        //1.2 new 연산자 통해 만들고, 속성추가. 
+        var obj_ = new Object();
+        obj_.x = "x 속성값";
+        obj_["y"] = "y(문자열) 속성값";
+        obj_.z = function () {
+            return "저는 속성에 지정된 함수입니다."
+        };
+        console.log(obj_);
+        //2. 속성값 접근하기 
+        console.log(obj.x);
+        console.log(obj["x"]);
+        //console.log(obj[x]);// Uncaught ReferenceError: x is not defined // 변수 x => undefined 
+
+        console.log(obj.y);
+        console.log(obj["y"]);
+
+        console.log(obj.z);
+        console.log(obj["z"]());//함수 호출해서 문자열을 리턴받는다. 
+
+
+        // 교재 p163 
+        var v = obj.nonExist || "기본값";
+        console.log(v); // 기본값 
+
+        // 교재 p164 - 1
+        obj.x = "속성값 갱신";
+        console.log(obj.x);
+        //존재하지 않는 속성 추가하기 
+        obj.add1 = "새로운 속성 추가";
+        console.log(obj.add1);
+        obj.add2 = { newAttr: "새로운 속성에 객체를 추가" }
+        console.log(obj);
+
+        // 교재 p164 - 2
+        delete obj.add1;
+        console.log(obj);
+
+        // 교재 p164 - 3
+        var dog1 = {
+            name: "예삐",
+            breed: "푸들",
+            bark: function () {
+                return "왈왈";
+            }
+        }
+        var dog2 = dog1;//dog1을 dog2에 할당. 이때 참조값이 전달된다. 새로운 객체가 생성되지 않는다.
+        console.log(dog2);
+        dog1.name = "뽀삐";
+        console.log(dog2.name);//뽀삐 
+        //객체참조 테스트 
+        var a = {}, b = {}, c = {};
+        //a, b, c는 각각 다른 빈 객체 참조. 
+        a = b = c = {};
+        //a, b, c는 모두 같은 빈 객체 참조.
+    </script>
+</body>
+
+</html>

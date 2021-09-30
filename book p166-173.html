@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 교재 p167 -->
+    <!-- <script> 
+        //버튼별 이벤트핸들러 
+        window.onload = function(){ 
+        document.querySelector("#blank").onclick = function(){ 
+         window.open("https://naver.com","_blank", "", true); 
+        } 
+        document.querySelector("#parent").onclick = function(){ 
+        window.open("https://naver.com","_parent", "width=500, height=300"); 
+        } 
+        document.querySelector("#self").onclick = function(){ 
+        window.open("https://naver.com","_self","width=500, height=300", false); 
+        } 
+        document.querySelector("#top").onclick = function(){ 
+        window.open("http://naver.com","_top", "width=500, height=300", true); 
+        } 
+        } 
+        </script>  -->
+
+    <!-- 교재 p168 - 1 -->
+    <!-- <script type="text/javascript"> 
+            var child = window.open('', '', 'width=300, height=200'); 
+            child.moveTo(0, 0); 
+            setInterval(function(){ 
+            child.moveBy(10, 10); 
+            }, 1000); 
+        </script>  -->
+
+    <!-- 교재 p168 - 2 -->
+    <!-- <script>
+        output = "";
+        for (var v in location) {
+            output += v + " : " + location[v] + "<br>"
+        }
+        document.body.innerHTML = output;
+    </script> -->
+</head>
+
+<body>
+    <!-- 교재 p166 -->
+    <!-- <script type="text/javascript">
+        window.open();
+        winddow.open('https//naver.com/', 'naver', 'width=500 height=500', true);
+    </script> -->
+    <!-- 교재 p167 -->
+    <!-- <button id="blank">blank</button>&nbsp;&nbsp; 
+        <button id="parent">parent</button>&nbsp;&nbsp; 
+        <button id="self">self</button>&nbsp;&nbsp; 
+        <button id="top">top</button>  -->
+    <!-- 교재 p170 -->
+    <!-- <button id="btnReload">reload()</button>
+    <button id="btnAssign">assign()</button>
+    <button id="btnReplace">replace()</button>
+    <script>
+        document.querySelector("#btnReload").onclick = function () {
+            location.reload();
+        }
+        document.querySelector("#btnAssign").onclick = function () {
+            location.assign("https://naver.com");
+        }
+        document.querySelector("#btnReplace").onclick = function () {
+            location.replace("https://naver.com");
+        }
+
+        // 교재 p171
+        console.dir(navigator);
+    </script> -->
+    <!-- 교재 p172 -->
+    <button id="back">back()</button><br>
+    <button id="go">go()</button><input type="number" id="num"><br>
+    <button id="forward">forward()</button><br>
+    <button id="goNaver">히스토리쌓기::네이버</button>
+    <script>
+        document.querySelector("#back").addEventListener("click", function () {
+            history.back();
+        });
+        document.querySelector("#go").addEventListener("click", function () {
+            var num = document.querySelector("#num").value;
+            history.go(num);
+        });
+        document.querySelector("#forward").addEventListener("click", function () {
+            history.forward();
+        });
+        document.querySelector("#goNaver").addEventListener("click", function () {
+            location.assign("https://naver.com");
+        });
+
+        // 교재 p173
+        console.dir(screen);
+    </script>
+
+</body>
+
+</html>

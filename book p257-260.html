@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 교재 p257 -->
+    <!-- <h1>Canvas Element Demo</h1>
+    <canvas id="example" width="200" height="200">
+        이 메시지는 사용자의 브라우저에서 HTML5 캔버스를 지원하지 않는 경우 표시 됨
+    </canvas>
+    <script>
+        var example = document.getElementById('example');
+        var context = example.getContext('2d');
+        context.fillStyle = "rgb(255,0,0)";
+        context.fillRect(30, 30, 50, 50);
+    </script> -->
+
+    <!-- 교재 p258 -->
+    <!-- <h1>SVG Element Demo</h1>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <rect x="10" y="10" height="100" width="100" style="stroke:#ff0000; fill: #0000ff" />
+    </svg> -->
+
+    <!--object 요소 사용 -->
+    <object data="/svg/examples.svg" width="300" height="100" type="image/svg+xml"
+        codebase="http://www.adobe.com/svg/viewer/install/" />
+
+    <!-- embed 요소 사용 -->
+    <embed src="/svg/examples.svg" width="500" height="200" type="image/svg+xml"
+        pluginspage="http://www.adobe.com/svg/viewer/install/" />
+        
+    <!-- iframe 요소 사용 -->
+    <iframe src="/svg/examples.svg" width="300" height="100"></iframe>
+
+    <!-- 교재 p259 -->
+    <script>
+        var svgDocument;
+        var svgns = 'http://www.w3.org/2000/svg';
+        var xlinkns = 'http://www.w3.org/1999/xlink';
+        function startup(evt) {
+            P = document.getElementById("P")
+            CL = document.getElementById("CL")
+            animate()
+            stop("S")
+            stop("L")
+        }
+        limit = 720
+        blu = 4
+        speed = 6
+        running = true
+        function animate() {
+            if (!running) return
+            B = "rotate(" + blu + " 360 150)"
+            C = "rotate(" + (-blu / 2) + " 360 150)"
+            CL.setAttribute("transform", B);
+            P.setAttribute("transform", C);
+            blu = blu + speed
+            if ((blulimit)) speed = -speed
+            window.setTimeout("animate()", 10)
+        }
+        runAnim = new Object
+        runAnim["S"] = false
+        runAnim["L"] = false
+        function stop(id) {
+            if (runAnim[id]) {
+                document.getElementById(id).firstChild.nextSibling.endElement()
+                document.getElementById("E" + id).endElement()
+            }
+            else {
+                document.getElementById(id).firstChild.nextSibling.beginElement()
+                document.getElementById("E" + id).beginElement()
+            }
+            runAnim[id] = !runAnim[id]
+        }
+    </script>
+</body>
+
+</html>
